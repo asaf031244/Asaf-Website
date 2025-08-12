@@ -214,7 +214,7 @@
         }
 
         .certification-card h3 {
-            color: #00ff88;
+            color: #00d4ff;
             font-size: 2rem;
             margin-bottom: 20px;
             text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
@@ -324,7 +324,7 @@
         }
 
         .skill-category {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
@@ -538,7 +538,7 @@
             margin-top: 30px;
         }
 
-        /* Contact Modal */
+        /* Modal Base Styles */
         .modal {
             display: none;
             position: fixed;
@@ -575,6 +575,148 @@
             }
         }
 
+        .close {
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+
+        .close:hover {
+            color: #00ff88;
+        }
+
+        /* Terms Modal Styles */
+        .terms-modal-content {
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .terms-header h2 {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .terms-header p {
+            color: #cbd5e0;
+            font-size: 1.1rem;
+        }
+
+        .terms-content {
+            text-align: right;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .terms-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .terms-section h4 {
+            color: #00ff88;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .terms-section ul {
+            margin-right: 20px;
+        }
+
+        .terms-section li {
+            margin-bottom: 8px;
+            color: #e2e8f0;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            border-radius: 15px;
+        }
+
+        .terms-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #00ff88;
+            cursor: pointer;
+        }
+
+        .terms-checkbox label {
+            color: #ffc107;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .terms-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .terms-accept-btn {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #0f0f23;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .terms-accept-btn.enabled {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .terms-accept-btn.enabled:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .terms-decline-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .terms-decline-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Contact Modal Styles */
         .modal-header h2 {
             color: #00ff88;
             font-size: 2.5rem;
@@ -620,21 +762,6 @@
             width: 100%;
         }
 
-        .close {
-            color: #aaa;
-            float: left;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            left: 20px;
-        }
-
-        .close:hover {
-            color: #00ff88;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -659,10 +786,14 @@
                 width: fit-content;
             }
 
-            .modal-content {
+            .modal-content, .terms-modal-content {
                 margin: 10% auto;
                 padding: 25px;
                 width: 95%;
+            }
+
+            .terms-actions {
+                flex-direction: column;
             }
         }
 
@@ -948,7 +1079,7 @@
                         </ul>
                     </div>
                 </div>
-
+                
                 <div class="legal-disclaimer">
                     <h4>⚠️ הודעה חשובה</h4>
                     <p>על ידי יצירת קשר איתי או הזמנת שירותים, אתם מסכימים לתנאים המפורטים לעיל. 
@@ -995,6 +1126,98 @@
         </div>
     </footer>
 
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content terms-modal-content">
+            <span class="close" onclick="closeTermsModal()">&times;</span>
+            <div class="terms-header">
+                <h2>⚖️ תנאי שימוש והסכמה</h2>
+                <p>אנא קרא בעיון את התנאים הבאים לפני יצירת הקשר</p>
+            </div>
+
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h4>🔒 הגבלת אחריות</h4>
+                    <p><strong>אני (אסף) לא אהיה אחראי בשום צורה ל:</strong></p>
+                    <ul>
+                        <li>נזקים ישירים או עקיפים הנובעים משימוש בשירותי</li>
+                        <li>אובדן מידע, רווחים או הזדמנויות עסקיות</li>
+                        <li>נזקים לחומרה או תוכנה של הלקוח</li>
+                        <li>התנהגות בלתי חוקית של צד שלישי</li>
+                        <li>נזקים מעל לסכום ששולם עבור השירות הספציפי</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h4>📋 תנאי השירות</h4>
+                    <p><strong>כל עבודה כפופה לתנאים הבאים:</strong></p>
+                    <ul>
+                        <li>תשלום מלא לפני תחילת העבודה או לפי הסכם נפרד</li>
+                        <li>הלקוח אחראי לגיבוי המידע שלו לפני תחילת העבודה</li>
+                        <li>שינויים בהיקף העבודה יחויבו בתוספת תשלום</li>
+                        <li>זמני אספקה הם הערכות ולא התחייבויות קשיחות</li>
+                        <li>אני שומר לעצמי את הזכות לסרב לכל פרויקט</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h4>🚫 הגבלות שימוש</h4>
+                    <p><strong>השירותים שלי אינם מיועדים ל:</strong></p>
+                    <ul>
+                        <li>פעילויות בלתי חוקיות או לא מוסריות</li>
+                        <li>פגיעה בזכויות יוצרים או קניין רוחני</li>
+                        <li>הפצת תוכן פוגעני, גזעני או מסוכן</li>
+                        <li>הונאות, רמאות או הטעיית הציבור</li>
+                        <li>פרויקטים המפרים חוקים במדינת ישראל</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h4>💰 תנאי תשלום</h4>
+                    <p><strong>מדיניות תשלומים:</strong></p>
+                    <ul>
+                        <li>תשלום במלואו או מקדמה של 50% לפני תחילת העבודה</li>
+                        <li>אין החזרים לאחר תחילת העבודה</li>
+                        <li>עמלות בנק ועמלות העברה על חשבון הלקוח</li>
+                        <li>איחור בתשלום יגרור עמלת פיגור של 2% לחודש</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h4>📧 פרטיות ואיסוף מידע</h4>
+                    <p><strong>התחייבויות פרטיות:</strong></p>
+                    <ul>
+                        <li>פרטי ההתקשרות שלך יישמרו אצלי למטרת המעקב והתמיכה בלבד</li>
+                        <li>לא אשלח הודעות ספאם או חומר פרסומי ללא בקשה ספציפית</li>
+                        <li>המידע לא יימסר לגורם שלישי ללא הסכמתך הברורה</li>
+                        <li>אתה יכול לבקש מחיקת הנתונים שלך בכל עת</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h4>🔄 עדכון תנאים</h4>
+                    <p><strong>זכות עדכון:</strong></p>
+                    <ul>
+                        <li>אני שומר לעצמי הזכות לעדכן תנאים אלו בכל עת</li>
+                        <li>עדכונים יפורסמו באתר ויכנסו לתוקף מיד</li>
+                        <li>המשך השימוש בשירותים מהווה הסכמה לתנאים המעודכנים</li>
+                        <li>ללקוחות קיימים - התנאים הישנים יחולו על פרויקטים פעילים</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-checkbox">
+                <input type="checkbox" id="agreeTerms">
+                <label for="agreeTerms">אני מאשר שקראתי, הבנתי ואני מסכים במלואי לכל התנאים המפורטים לעיל</label>
+            </div>
+
+            <div class="terms-actions">
+                <button id="termsAcceptBtn" class="terms-accept-btn">✅ אני מסכים - המשך ליצירת קשר</button>
+                <button onclick="closeTermsModal()" class="terms-decline-btn">❌ ביטול</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
@@ -1031,16 +1254,106 @@
             </button>
 
             <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
-                *על ידי יצירת קשר, אתה מסכים לתנאים המשפטיים המפורטים באתר
+                *על ידי יצירת קשר, אתה מסכים לתנאים המשפטיים
             </p>
         </div>
     </div>
 
     <script>
-        // Contact Modal Functions
+        // Global variables
         let selectedContactType = 'project';
+        let termsAccepted = false;
 
+        // Get basic tracking data
+        function getTrackingData() {
+            const now = new Date();
+            const hebrewDate = now.toLocaleDateString('he-IL', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                weekday: 'long',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            // Browser detection
+            const userAgent = navigator.userAgent;
+            let browser = 'לא זמין';
+            let os = 'לא זמין';
+            let device = 'מחשב';
+
+            if (userAgent.includes('Chrome')) browser = 'Chrome';
+            else if (userAgent.includes('Firefox')) browser = 'Firefox';
+            else if (userAgent.includes('Safari')) browser = 'Safari';
+            else if (userAgent.includes('Edge')) browser = 'Edge';
+
+            if (userAgent.includes('Windows')) os = 'Windows';
+            else if (userAgent.includes('Mac')) os = 'macOS';
+            else if (userAgent.includes('Linux')) os = 'Linux';
+            else if (userAgent.includes('Android')) os = 'Android';
+            else if (userAgent.includes('iPhone')) os = 'iOS';
+
+            if (userAgent.includes('Mobile') || userAgent.includes('Android') || userAgent.includes('iPhone')) {
+                device = 'נייד';
+            } else if (userAgent.includes('Tablet') || userAgent.includes('iPad')) {
+                device = 'טאבלט';
+            }
+
+            return {
+                acceptanceId: 'LEGAL_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                timestamp: now.toISOString(),
+                hebrewDate: hebrewDate,
+                userAgent: userAgent,
+                browser: browser,
+                os: os,
+                device: device,
+                language: navigator.language,
+                screenResolution: `${screen.width}x${screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                currentUrl: window.location.href
+            };
+        }
+
+        // Terms Modal Functions
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'block';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+        }
+
+        function checkTermsAgreement() {
+            const checkbox = document.getElementById('agreeTerms');
+            const acceptBtn = document.getElementById('termsAcceptBtn');
+            
+            if (checkbox.checked) {
+                acceptBtn.classList.add('enabled');
+                acceptBtn.onclick = acceptTermsAndOpenContact;
+            } else {
+                acceptBtn.classList.remove('enabled');
+                acceptBtn.onclick = null;
+            }
+        }
+
+        function acceptTermsAndOpenContact() {
+            const acceptanceData = getTrackingData();
+            
+            // Store acceptance data globally for WhatsApp message
+            window.legalAcceptanceData = acceptanceData;
+            termsAccepted = true;
+            
+            closeTermsModal();
+            openContactModal();
+        }
+
+        // Contact Modal Functions
         function openContactModal() {
+            if (!termsAccepted) {
+                openTermsModal();
+                return;
+            }
             document.getElementById('contactModal').style.display = 'block';
         }
 
@@ -1063,11 +1376,16 @@
         function sendWhatsApp() {
             const phoneNumber = '972535524017'; // מספר הטלפון שלך
             
+            // Include tracking data in WhatsApp message if available
+            const acceptanceInfo = window.legalAcceptanceData ? 
+                `\n\n📋 מזהה תיעוד משפטי: ${window.legalAcceptanceData.acceptanceId}\n⏰ תאריך אישור: ${window.legalAcceptanceData.hebrewDate}\n💻 מערכת: ${window.legalAcceptanceData.os} | ${window.legalAcceptanceData.browser}\n📱 מכשיר: ${window.legalAcceptanceData.device}` : 
+                '\n\n*אישור תנאי השימוש בוצע באתר';
+            
             const messages = {
-                project: 'היי! הגעתי מהאתר שלך, אני מעוניין בפיתוח פרויקט חדש (שרת מיינקראפט/אתר/יישום Python). אשמח לשמוע עוד פרטים על השירותים שלך.',
-                consultation: 'היי! הגעתי מהאתר שלך, אני מעוניין בייעוץ טכני באבטחת מידע או פיתוח. אשמח לקבוע שיחה.',
-                collaboration: 'היי! הגעתי מהאתר שלך, יש לי רעיון מעניין לשיתוף פעולה או עבודה משותפת. אשמח לדבר איתך על זה.',
-                other: 'היי! הגעתי מהאתר שלך, אני מעוניין להכיר ולשמוע עוד על העבודה שלך.'
+                project: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בפיתוח פרויקט חדש (שרת מיינקראפט/אתר/יישום Python). אשמח לשמוע עוד פרטים על השירותים שלך. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
+                consultation: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בייעוץ טכני באבטחת מידע או פיתוח. אשמח לקבוע שיחה. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
+                collaboration: 'היי אסף! הגעתי מהאתר שלך, יש לי רעיון מעניין לשיתוף פעולה או עבודה משותפת. אשמח לדבר איתך על זה. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
+                other: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין להכיר ולשמוע עוד על העבודה שלך. *אישרתי את תנאי השימוש באתר' + acceptanceInfo
             };
             
             const message = messages[selectedContactType];
@@ -1088,18 +1406,28 @@
             if (finalCtaButton) {
                 finalCtaButton.addEventListener('click', openContactModal);
             }
+
+            const agreeCheckbox = document.getElementById('agreeTerms');
+            if (agreeCheckbox) {
+                agreeCheckbox.addEventListener('change', checkTermsAgreement);
+            }
         });
 
         // Close modal when clicking outside or pressing Escape
         window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target === modal) {
+            const termsModal = document.getElementById('termsModal');
+            const contactModal = document.getElementById('contactModal');
+            
+            if (event.target === termsModal) {
+                closeTermsModal();
+            } else if (event.target === contactModal) {
                 closeContactModal();
             }
         }
 
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
+                closeTermsModal();
                 closeContactModal();
             }
         });
@@ -1149,7 +1477,7 @@
             greeting = 'ערב טוב! 🌙';
         }
         
-        console.log(greeting);
+        console.log(greeting + ' ברוך הבא לאתר של אסף!');
     </script>
 </body>
 </html>
