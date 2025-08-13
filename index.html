@@ -205,84 +205,6 @@
             color: #00d4ff;
         }
 
-        /* Certifications Section */
-        .certifications-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .certification-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            border: 2px solid #00ff88;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .certification-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
-            border-color: #00d4ff;
-        }
-
-        .cert-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
-        }
-
-        .certification-card h3 {
-            color: #00d4ff;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
-
-        .cert-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cert-image {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cert-image:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-            border-color: #00d4ff;
-        }
-
-        .cert-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .cert-description {
-            margin-top: 30px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 25px;
-            border-left: 4px solid #00ff88;
-        }
-
         /* Projects Grid */
         .projects-grid {
             display: grid;
@@ -379,41 +301,6 @@
         .skill-list li {
             padding: 5px 0;
             opacity: 0.9;
-        }
-
-        /* Benefits Section */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .benefit-card h3 {
-            color: #00d4ff;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
         }
 
         /* Legal Terms Section */
@@ -787,6 +674,23 @@
             width: 100%;
         }
 
+        /* Loading spinner */
+        .loading-spinner {
+            border: 4px solid rgba(0, 255, 136, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #00ff88;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -799,10 +703,6 @@
 
             .section-title {
                 font-size: 2rem;
-            }
-
-            .cert-images {
-                grid-template-columns: 1fr;
             }
 
             .contact-details p {
@@ -874,31 +774,6 @@
     </section>
 
     <div class="container">
-        <!-- Certifications Section -->
-        <section class="section" id="certifications">
-            <h2 class="section-title fade-in">התעודות וההסמכות שלי</h2>
-            
-            <div class="certifications-container">
-                <div class="certification-card fade-in">
-                    <div class="cert-icon">🏆</div>
-                    <h3>eJPT - eLearnSecurity Junior Penetration Tester</h3>
-                    <div class="cert-images">
-                        <div class="cert-image">
-                            <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/156793566" alt="eJPT Certificate" loading="lazy">
-                            <p>תעודה רשמית</p>
-                        </div>
-                        <div class="cert-image">
-                            <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/156793566" alt="eJPT Badge" loading="lazy">
-                            <p>תג דיגיטלי</p>
-                        </div>
-                    </div>
-                    <div class="cert-description">
-                        <p>הסמכה בינלאומית בתחום בדיקות חדירה ואבטחת מידע מ-eLearnSecurity. התעודה מעידה על יכולות מתקדמות בזיהוי פגיעויות, ניתוח אבטחה וביצוע בדיקות חדירה מקצועיות.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Projects Section -->
         <section class="section" id="projects">
             <h2 class="section-title fade-in">הפרויקטים שלי</h2>
@@ -1003,37 +878,6 @@
                         <li>Docker</li>
                         <li>REST APIs</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Me Section -->
-        <section class="section" id="why-me">
-            <h2 class="section-title fade-in">למה לבחור בי?</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>מהיר ויעיל</h3>
-                    <p>אני מספק פתרונות איכותיים בזמן קצר, בלי לוותר על איכות</p>
-                </div>
-
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>בטיחות ואבטחה</h3>
-                    <p>עם הסמכת eJPT, אני דואג שהפרויקטים שלך יהיו מאובטחים ומוגנים</p>
-                </div>
-
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">💬</div>
-                    <h3>תמיכה מלאה</h3>
-                    <p>אני כאן גם אחרי סיום הפרויקט - תמיכה מתמשכת וזמינות גבוהה</p>
-                </div>
-
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>מותאם אישית</h3>
-                    <p>כל פתרון מותאם בדיוק לצרכים שלך - לא תבניות גנריות</p>
                 </div>
             </div>
         </section>
@@ -1220,8 +1064,6 @@
                     </ul>
                 </div>
 
-               
-
                 <div class="terms-section">
                     <h4>🔄 עדכון תנאים</h4>
                     <p><strong>זכות עדכון:</strong></p>
@@ -1277,6 +1119,8 @@
                 </div>
             </div>
 
+            <div class="loading-spinner" id="loadingSpinner"></div>
+            
             <button class="whatsapp-btn" onclick="sendWhatsApp()">
                 📱 שלח הודעה ב-WhatsApp
             </button>
@@ -1287,13 +1131,26 @@
         </div>
     </div>
 
-    <script>
+   <script>
         // Global variables
         let selectedContactType = 'project';
         let termsAccepted = false;
 
-        // Get basic tracking data
-        function getTrackingData() {
+        // Google Apps Script URL - החלף בכתובת שלך
+        const GOOGLE_SCRIPT_URL = 'hhttps://script.google.com/macros/s/AKfycbwB4ICgJjkoW0xjcexvBACYrJKh5CszM_lSLm8lKe2SSAfNILBQ81KMezgYjhVqVKZQmg/exec';
+
+        // Check if terms already accepted
+        function isTermsAlreadyAccepted() {
+            return localStorage.getItem('termsAccepted') === 'true';
+        }
+
+        // Save terms acceptance to localStorage
+        function saveTermsAcceptance() {
+            localStorage.setItem('termsAccepted', 'true');
+        }
+
+        // Get client IP and basic tracking data
+        async function getClientData() {
             const now = new Date();
             const hebrewDate = now.toLocaleDateString('he-IL', {
                 year: 'numeric',
@@ -1328,10 +1185,21 @@
                 device = 'טאבלט';
             }
 
+            // Try to get IP (fallback if service is unavailable)
+            let clientIP = 'לא זמין';
+            try {
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                clientIP = ipData.ip;
+            } catch (error) {
+                console.log('Could not get IP:', error);
+            }
+
             return {
                 acceptanceId: 'LEGAL_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 timestamp: now.toISOString(),
                 hebrewDate: hebrewDate,
+                clientIP: clientIP,
                 userAgent: userAgent,
                 browser: browser,
                 os: os,
@@ -1342,6 +1210,36 @@
                 currentUrl: window.location.href
             };
         }
+
+        // Send data to Google Apps Script
+// Send data to Google Apps Script - CORS-safe
+async function sendToGoogleScript(clientData) {
+  try {
+    const ok = navigator.sendBeacon(GOOGLE_SCRIPT_URL, JSON.stringify(clientData));
+    if (ok) {
+      console.log('Sent via sendBeacon');
+      return true;
+    }
+
+    // 2) Fallback: FormData בלי כותרות -> בקשה "פשוטה" ללא preflight
+    const fd = new FormData();
+    for (const [k, v] of Object.entries(clientData)) {
+      fd.append(k, typeof v === 'object' ? JSON.stringify(v) : v);
+    }
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      // אל תגדיר headers בכלל כדי לא להדליק preflight
+      body: fd
+    });
+
+    console.log('Sent via FormData fallback');
+    return true;
+
+  } catch (error) {
+    console.error('Error sending to Google Script:', error);
+    return false;
+  }
+}
 
         // Terms Modal Functions
         function openTermsModal() {
@@ -1365,20 +1263,40 @@
             }
         }
 
-        function acceptTermsAndOpenContact() {
-            const acceptanceData = getTrackingData();
+        async function acceptTermsAndOpenContact() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const acceptBtn = document.getElementById('termsAcceptBtn');
             
-            // Store acceptance data globally for WhatsApp message
-            window.legalAcceptanceData = acceptanceData;
-            termsAccepted = true;
+            // Show loading
+            loadingSpinner.style.display = 'block';
+            acceptBtn.disabled = true;
+            acceptBtn.textContent = 'שולח נתונים...';
             
-            closeTermsModal();
-            openContactModal();
+            try {
+                const clientData = await getClientData();
+                await sendToGoogleScript(clientData);
+                
+                // Save acceptance to localStorage
+                saveTermsAcceptance();
+                termsAccepted = true;
+                
+                closeTermsModal();
+                openContactModal();
+            } catch (error) {
+                console.error('Error processing terms acceptance:', error);
+                alert('אירעה שגיאה. אנא נסה שוב.');
+            } finally {
+                // Hide loading
+                loadingSpinner.style.display = 'none';
+                acceptBtn.disabled = false;
+                acceptBtn.textContent = '✅ אני מסכים - המשך ליצירת קשר';
+            }
         }
 
         // Contact Modal Functions
         function openContactModal() {
-            if (!termsAccepted) {
+            // Check if terms already accepted
+            if (!isTermsAlreadyAccepted() && !termsAccepted) {
                 openTermsModal();
                 return;
             }
@@ -1404,16 +1322,11 @@
         function sendWhatsApp() {
             const phoneNumber = '972535524017'; // מספר הטלפון שלך
             
-            // Include tracking data in WhatsApp message if available
-            const acceptanceInfo = window.legalAcceptanceData ? 
-                `\n\n📋 מזהה תיעוד משפטי: ${window.legalAcceptanceData.acceptanceId}\n⏰ תאריך אישור: ${window.legalAcceptanceData.hebrewDate}\n💻 מערכת: ${window.legalAcceptanceData.os} | ${window.legalAcceptanceData.browser}\n📱 מכשיר: ${window.legalAcceptanceData.device}` : 
-                '\n\n*אישור תנאי השימוש בוצע באתר';
-            
             const messages = {
-                project: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בפיתוח פרויקט חדש (שרת מיינקראפט/אתר/יישום Python). אשמח לשמוע עוד פרטים על השירותים שלך. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
-                consultation: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בייעוץ טכני באבטחת מידע או פיתוח. אשמח לקבוע שיחה. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
-                collaboration: 'היי אסף! הגעתי מהאתר שלך, יש לי רעיון מעניין לשיתוף פעולה או עבודה משותפת. אשמח לדבר איתך על זה. *אישרתי את תנאי השימוש באתר' + acceptanceInfo,
-                other: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין להכיר ולשמוע עוד על העבודה שלך. *אישרתי את תנאי השימוש באתר' + acceptanceInfo
+                project: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בפיתוח פרויקט חדש (שרת מיינקראפט/אתר/יישום Python). אשמח לשמוע עוד פרטים על השירותים שלך.',
+                consultation: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין בייעוץ טכני באבטחת מידע או פיתוח. אשמח לקבוע שיחה.',
+                collaboration: 'היי אסף! הגעתי מהאתר שלך, יש לי רעיון מעניין לשיתוף פעולה או עבודה משותפת. אשמח לדבר איתך על זה.',
+                other: 'היי אסף! הגעתי מהאתר שלך, אני מעוניין להכיר ולשמוע עוד על העבודה שלך.'
             };
             
             const message = messages[selectedContactType];
@@ -1509,8 +1422,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
