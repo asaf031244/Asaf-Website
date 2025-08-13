@@ -39,15 +39,40 @@
             z-index: 2;
         }
 
+        .hero-title-section {
+            margin-bottom: 20px;
+        }
+
         .hero h1 {
             font-size: 5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: linear-gradient(45deg, #00ff88, #00d4ff, #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% 200%;
             animation: gradientShift 3s ease-in-out infinite;
             text-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
+        }
+
+        .why-choose-me-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #0f0f23;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0, 255, 136, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .why-choose-me-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+            background: linear-gradient(45deg, #00d4ff, #00ff88);
         }
 
         @keyframes gradientShift {
@@ -795,6 +820,12 @@
             .terms-actions {
                 flex-direction: column;
             }
+
+            .why-choose-me-btn {
+                font-size: 0.9rem;
+                padding: 8px 20px;
+                margin-top: 10px;
+            }
         }
 
         /* Animations */
@@ -818,7 +849,10 @@
         <div class="floating-element"></div>
         
         <div class="hero-content">
-            <h1>אסף</h1>
+            <div class="hero-title-section">
+                <h1>אסף</h1>
+                <a href="https://asaf031244.github.io/Asaf-Website/why-choose-me" class="why-choose-me-btn" target="_blank">✨ למה לבחור בי?</a>
+            </div>
             <p>מפתח ומתכנת | יוצר שרתי מיינקראפט ופתרונות דיגיטליים</p>
             
             <div class="hero-badges">
