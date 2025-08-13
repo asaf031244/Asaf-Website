@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>התעודות וההסמכות שלי</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0f1a;
+      color: #fff;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #00d4ff;
+    }
+    .certifications-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .certification-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 900px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .certification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+      border-color: #00d4ff;
+    }
+    .cert-icon {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .certification-card h3 {
+      text-align: center;
+      color: #00d4ff;
+      margin-bottom: 20px;
+    }
+    .cert-images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .cert-image {
+      text-align: center;
+    }
+    .cert-image img {
+      max-width: 320px; /* מוגדל כדי לראות טוב יותר */
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .cert-image img:hover {
+      transform: scale(1.05);
+      border-color: #00d4ff;
+    }
+    .cert-image p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .cert-description {
+      margin-top: 20px;
+      text-align: center;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    /* אנימציה */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* כפתור חזרה */
+    .back-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.5);
+    }
+    .center-btn {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section" id="certifications">
+    <h2 class="section-title fade-in">התעודות וההסמכות שלי</h2>
+    
+    <div class="certifications-container">
+      <div class="certification-card fade-in">
+        <div class="cert-icon">🏆</div>
+        <h3>eJPT - eLearnSecurity Junior Penetration Tester</h3>
+        <div class="cert-images">
+          <div class="cert-image">
+            <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/156793566" alt="eJPT Certificate" loading="lazy">
+            <p>תעודה רשמית</p>
+          </div>
+          <div class="cert-image">
+            <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/156793566" alt="eJPT Badge" loading="lazy">
+            <p>תג דיגיטלי</p>
+          </div>
+        </div>
+        <div class="cert-description">
+          <p>הסמכה בינלאומית בתחום בדיקות חדירה ואבטחת מידע מ-eLearnSecurity. התעודה מעידה על יכולות מתקדמות בזיהוי פגיעויות, ניתוח אבטחה וביצוע בדיקות חדירה מקצועיות.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-btn">
+      <a href="index.html" class="back-btn">⬅ חזרה לדף הראשי</a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        el.classList.add("visible");
+      });
+    });
+  </script>
+
+</body>
+</html>
