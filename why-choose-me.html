@@ -60,6 +60,27 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* עיצוב הכפתור */
+    .back-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.5);
+    }
+    .center-btn {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -91,6 +112,10 @@
         <h3>מותאם אישי</h3>
         <p>כל פתרון מותאם בדיוק לצרכים שלך - לא תבניות גנריות</p>
       </div>
+    </div>
+
+    <div class="center-btn">
+      <a href="index.html" class="back-btn">⬅ חזרה לדף הראשי</a>
     </div>
   </section>
 
